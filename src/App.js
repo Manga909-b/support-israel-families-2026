@@ -1,76 +1,82 @@
+import React from "react";
+import "./index.css";
+
 export default function App() {
   return (
-    <div
-      style={{
-        backgroundColor: "#0b1020",
-        color: "white",
-        minHeight: "100vh",
-        padding: "40px",
-        fontFamily: "Arial",
-        textAlign: "center",
-      }}
-    >
-      <h1>Support Israeli Families 🇮🇱</h1>
-
-      <p style={{ fontSize: "18px", marginTop: "20px" }}>
-        Helping Israeli families affected by war.
-      </p>
-
-      <div
-        style={{
-          marginTop: "40px",
-          padding: "20px",
-          backgroundColor: "#111827",
-          borderRadius: "12px",
-        }}
-      >
-        <h2>Donate with PayPal</h2>
-
-        <a
-          href="https://paypal.me/bernmanga93"
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            display: "inline-block",
-            marginTop: "15px",
-            padding: "14px 24px",
-            backgroundColor: "#0070ba",
-            color: "white",
-            textDecoration: "none",
-            borderRadius: "8px",
-            fontWeight: "bold",
-          }}
-        >
-          Donate via PayPal
-        </a>
-      </div>
-
-      <div
-        style={{
-          marginTop: "30px",
-          padding: "20px",
-          backgroundColor: "#111827",
-          borderRadius: "12px",
-        }}
-      >
-        <h2>Crypto Donations</h2>
-
+    <div className="app">
+      <header className="hero">
+        <h1>Israel Relief Fund</h1>
         <p>
-          <strong>USDT / ETH:</strong>
+          Support Israeli families affected by war. Every donation helps.
         </p>
 
-        <p style={{ wordBreak: "break-all" }}>
-          0x888d582327Ef893E2d6b97A2e6be0142B03680d2
-        </p>
+        <div className="buttons">
+          <a
+            href="https://www.paypal.com/paypalme/bernmanga93"
+            target="_blank"
+            rel="noreferrer"
+            className="btn primary"
+          >
+            Donate with PayPal
+          </a>
 
-        <p>
-          <strong>BTC:</strong>
-        </p>
+          <a href="#crypto" className="btn secondary">
+            Donate with Crypto
+          </a>
+        </div>
+      </header>
 
-        <p style={{ wordBreak: "break-all" }}>
-          bc1qt4suajd5csxwyl2k76dxc42cqfjh2k39x9c089
-        </p>
-      </div>
+      <section className="section">
+        <h2>Quick Donation Amounts</h2>
+
+        <div className="donation-grid">
+          {["$1", "$5", "$10", "$25", "₪18", "₪50"].map((amount) => (
+            <a
+              key={amount}
+              href="https://www.paypal.com/paypalme/bernmanga93"
+              target="_blank"
+              rel="noreferrer"
+              className="donation-btn"
+            >
+              Donate {amount}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" id="crypto">
+        <h2>Crypto Wallets</h2>
+
+        <div className="wallet">
+          <h3>USDT</h3>
+          <p>0x888d582327Ef893E2d6b97A27e66e01428036800</p>
+        </div>
+
+        <div className="wallet">
+          <h3>Bitcoin (BTC)</h3>
+          <p>bc1qt4suajd5cxswyl2k76dxc42cqfjh2k39x9c089</p>
+        </div>
+
+        <div className="wallet">
+          <h3>Ethereum (ETH)</h3>
+          <p>0x888d582327Ef893E2d6b97A27e66e01428036800</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>Hebrew Support</h2>
+
+        <div dir="rtl" className="hebrew">
+          <h3>תמיכה במשפחות ישראליות שנפגעו מהמלחמה</h3>
+          <p>
+            כל תרומה חשובה — החל מדולר אחד בלבד.
+          </p>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <p>Contact: bernmanga93@gmail.com</p>
+      </footer>
     </div>
   );
 }
